@@ -66,6 +66,23 @@ def salary_data():
     return jsonify(salary_dict)
 
 
+# Create and define employment type data route
+@app.route("/api/type_data")
+def type_data():
+    conn = sqlite3.connect('data/jobstats_db.sqlite')
+    cur = conn.cursor()
+    employment_types = cur.execute('select remote_ratio, COUNT(job_title) from job_stats GROUP BY remote_ratio').fetchall()
+    conn.close()
+ 
+    # Convert the query results to a dictionary using `remote_ratio` as the key and `job_title` as the value
+    employment_types_dict = {}
+    for type, job_count in employment_types:
+        employment_types_dict[type] = job_count    
+
+    # Return the JSON representation of the dictionary
+    return jsonify(employment_types_dict)
+
+
 # Create and define country data route
 @app.route("/api/country_data")
 def country_data():
@@ -79,7 +96,7 @@ def country_data():
     for country, job_count in num_jobs:
         num_jobs_dict[country] = job_count    
 
-    # Return the JSON representation of the dictionary. 
+    # Return the JSON representation of the dictionary
     return jsonify(num_jobs_dict)
 
 
@@ -97,6 +114,12 @@ def salary():
 
     # Return template 
     return render_template("salary.html")
+
+@app.route("/type")
+def type():
+
+    # Return template and data
+    return render_template("type.html")
 
 @app.route("/country")
 def country():

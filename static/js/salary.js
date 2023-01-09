@@ -11,59 +11,17 @@ console.log(dataProm)
 
 // Use "then" method on the promised data (dataProm) to passin a function 
 dataProm.then(function(data){
-    console.log(data)
-    console.log(Object.keys(data));
-    console.log(Object.values(data));
+  console.log(data)
+  // console.log(Object.keys(data));
+  // console.log(Object.values(data));
 })
 
-
-// // // // Create 'initialize' function (int) to populate the dropdown menu and plot charts with first ID in 'names' // // //
-
-// function init() {
-//   // Read in the data from the url
-//   dataProm.then((data => {
-
-//     console.log('data: ' + JSON.stringify(data)) 
-    
-//     // Using d3, select the element with id="selDataset" for rendering/ creating  'dropdown menu' (user input)
-//     var dropdown = d3.select("#selDataset");
-
-  
-//     // Populate the dropdown menu with all the participant's ID - For each name (ID) in data.names, add each name as an option to the dropdown menu 
-//     data.names.forEach((name => {
-//       console.log('name: ' + name)
-//       var option = dropdown.append('option').text(name).property('value', name);
-      
-//       console.log('option: ' + JSON.stringify(option));
-
-//     }));
-
-//     // Get the first participant ID (initID) from 'data.names' for the initial setup of all charts/table
-//     var initID = data.names[0]
-    
-//     // Call demographic and plotChart (bar and bubble chart) functions with initID for initial display
-//     demographicInfo(initID);
-//     plotChart(initID);  
-//   }));
-// }
-
-
-// // // // Create 'changeOption' function to render/create charts with the 'selected ID' data // // //
-
-// function optionChanged(selectedID) {
-//   demographicInfo(selectedID);
-//   plotChart(selectedID);
-// };
 
 // // // // Create function for plotChart (bar and bubble chart) // // //
 
 function plotChart() {
   // Read in the data from the Link
   dataProm.then((data => {
-
-//     // To get the test subject (selectedID), filter the 'data.samples' on ID  
-//     testSubject = data.samples.filter(sample => sample.id == selectedID)[0];
-//     // console.log("testSubject: " + JSON.stringify(testSubject))    
 
     // Extract data from dictionary for plotting
     var salary = Object.values(data);
