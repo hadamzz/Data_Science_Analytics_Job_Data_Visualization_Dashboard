@@ -18,52 +18,22 @@
 
 <body>
 
-    <!-- Start of navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-  
-          <!-- Landing page ('Home') tab to left end-->
-          <a class="navbar-brand rounded ms-2 p-1 text-white fw-bold" href="index.html">Home</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-haspopup="true" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>        
-          
-            <!-- Collapsable Tabs to right end-->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-              
-              <!-- Dropdown tab -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Data Jobs Statstics
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="salary.html">Salary Statstics</a></li>
-                  <li><a class="dropdown-item" href="country.html">Job Demographic</a></li>                  
-                </ul>
-              </li>
-  
-              <!-- Link tabs -->
-              <li class="nav-item">
-                <a class="nav-link" href="map.html">Job Postings</a>
-              </li>              
-            </ul>
-            </div>          
-        </div>
-    </nav>
-    <!-- End of navbar -->    
-  
-  
-    <!-- Start of 'country pie chart' container -->
-    <div class="container">    
-    <div class="row">
-      <div id="bar"></div>      
-    </div>    
+  <!-- Navbar component added -->
+  {% include "navbar.html" %}
+   
+ 
+  <!-- Start of 'country pie chart' container -->
+  <div class="container">    
+  <div class="row">
+    <div id="bar"></div>      
+  </div>    
   </div>
-
+  
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="../static/js/type.js"></script>
+
+  
     
 </body>
 
