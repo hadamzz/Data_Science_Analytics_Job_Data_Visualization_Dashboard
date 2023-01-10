@@ -18,11 +18,22 @@ from flask import request
 
 #################################################
 
-# # Connect to the Database and check the table
+# # Connect to the 'jobstats_db' Database and check the table
 # conn = sqlite3.connect('data/jobstats_db.sqlite')
 # cur = conn.cursor()
 # conn.close()
 # print(cur.execute('select * from job_stats').fetchall())
+
+
+# # Connect to the 'jobstats_db' Database and check the table
+# conn = sqlite3.connect('data/updated_jobs_usa_df.sqlite')
+# cur = conn.cursor()
+# # conn.close()
+# print(cur.execute('select * from updated_jobs_usa').fetchall())
+
+
+
+
 
 #################################################
 
@@ -98,6 +109,28 @@ def country_data():
 
     # Return the JSON representation of the dictionary
     return jsonify(num_jobs_dict)
+
+
+# Create and define map data route
+@app.route("/api/map_data")
+def map_data():
+    conn = sqlite3.connect('data/updated_jobs_usa_df.sqlite')
+    cur = conn.cursor()
+    job_postings = cur.execute('select * from updated_jobs_usa').fetchall()
+    conn.close()
+
+    job_postings_dict = {}
+    for title, location, work_environment, location, posted_date, link, latitude, longitude in job_postings:
+        job_postings_dict[(latitude, longitude)] = {
+            "title": title,
+            "work_environment": work_environment,
+            "location": location,
+            "posted_date": posted_date,
+            "link": link
+        }
+
+    return jsonify(job_postings_dict)
+    
 
 
 ### SETUP WEB ROUTES
