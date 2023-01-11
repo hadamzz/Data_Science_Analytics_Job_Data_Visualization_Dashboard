@@ -25,8 +25,8 @@ from flask import request
 # print(cur.execute('select * from job_stats').fetchall())
 
 
-# # Connect to the 'jobstats_db' Database and check the table
-# conn = sqlite3.connect('data/updated_jobs_usa_df.sqlite')
+# # Connect to the 'updated_jobs_usa_db' Database and check the table
+# conn = sqlite3.connect('data/updated_jobs_usa_db.sqlite')
 # cur = conn.cursor()
 # # conn.close()
 # print(cur.execute('select * from updated_jobs_usa').fetchall())
@@ -112,22 +112,27 @@ def country_data():
 
 
 # Create and define map data route
-@app.route("/api/map_data")
+@app.route('/api/map_data')
 def map_data():
-    conn = sqlite3.connect('data/updated_jobs_usa_df.sqlite')
+    conn = sqlite3.connect('data/updated_jobs_usa_db.sqlite')
     cur = conn.cursor()
     job_postings = cur.execute('select * from updated_jobs_usa').fetchall()
     conn.close()
 
     job_postings_dict = {}
-    for title, location, work_environment, location, posted_date, link, latitude, longitude in job_postings:
-        job_postings_dict[(latitude, longitude)] = {
-            "title": title,
-            "work_environment": work_environment,
-            "location": location,
-            "posted_date": posted_date,
-            "link": link
+    i = 0
+    for title, company, work_environment, location, posted_date, link, latitude, longitude in job_postings:
+        job_postings_dict[str(i)] = {
+            'latitude': latitude,
+            'longitude': longitude,
+            'company': company,
+            'title': title,
+            'work_environment': work_environment,
+            'location': location,
+            'posted_date': posted_date,
+            'link': link
         }
+        i += 1
 
     return jsonify(job_postings_dict)
     
