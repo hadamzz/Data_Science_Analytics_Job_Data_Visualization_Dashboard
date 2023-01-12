@@ -1,20 +1,6 @@
 # Import dependencies
-import numpy as np
-import pandas as pd
-import datetime as dt
-
 import sqlite3
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-from sqlalchemy import Column, Integer, String, Float
-from sqlalchemy.types import Date
-from sqlalchemy.ext.declarative import declarative_base
-
 from flask import Flask, jsonify, render_template 
-from flask import request
-
 
 #################################################
 
@@ -30,10 +16,6 @@ from flask import request
 # cur = conn.cursor()
 # # conn.close()
 # print(cur.execute('select * from updated_jobs_usa').fetchall())
-
-
-
-
 
 #################################################
 
@@ -112,28 +94,30 @@ def country_data():
 
 
 # Create and define map data route
-@app.route('/api/map_data')
+@app.route("/api/map_data")
 def map_data():
     conn = sqlite3.connect('data/updated_jobs_usa_db.sqlite')
     cur = conn.cursor()
     job_postings = cur.execute('select * from updated_jobs_usa').fetchall()
     conn.close()
 
+    # Convert the query results to a dictionary of dictionaries
     job_postings_dict = {}
     i = 0
-    for title, company, work_environment, location, posted_date, link, latitude, longitude in job_postings:
+    for title, company, attribute, location, posted_date, link, latitude, longitude in job_postings:
         job_postings_dict[str(i)] = {
             'latitude': latitude,
             'longitude': longitude,
             'company': company,
             'title': title,
-            'work_environment': work_environment,
+            'attribute': attribute,
             'location': location,
             'posted_date': posted_date,
             'link': link
         }
         i += 1
 
+    # Return the JSON representation of the dictionary of dictionaries
     return jsonify(job_postings_dict)
     
 

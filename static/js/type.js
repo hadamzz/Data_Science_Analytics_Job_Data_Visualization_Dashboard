@@ -32,7 +32,7 @@ function plotChart() {
     var trace1 = {
       values: job_count,
       labels: type,    
-      name: 'Employement Type',
+      name: 'Attribute',
       type: 'pie', 
       hole: 0.25,        
       marker: {
@@ -43,13 +43,13 @@ function plotChart() {
 
     var data = [trace1]
     var layout = {
-        title: {text: 'Employment Type Distribution by Title', font: {family: 'Arial Black', size: 24}},    
+        title: {text: 'Attribute Distribution by Title', font: {family: 'Arial Black', size: 24}},    
         height: 600,
         width: 900 
     };  
            
-    // Plot the bar chart (@ div with id='bar' in country.html)
-    Plotly.newPlot('bar', data, layout);  
+    // Plot the bar chart (@ div with id='pie' in attribute.html)
+    Plotly.newPlot('pie', data, layout);  
 
   }));    
 };

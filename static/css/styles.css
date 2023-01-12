@@ -4,3 +4,22 @@ body {background-color: #f2f0f0;
 .navbar-brand {color: white; font:bold; background: rgb(13, 172, 156);}
 
 .title {color: rgb(13, 172, 156); font-weight: bold;}
+
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.legend {
+  line-height: 18px;
+  color: black;
+  background-color: white;
+}
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+} 

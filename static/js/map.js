@@ -14,7 +14,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // URL for fetching the data
 var link = '/api/map_data';
 
-// Creating coloured icons using GitHub resource
+// Creating icon objects using GitHub resource
 var iconColor;
 var greenIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
@@ -47,11 +47,11 @@ var goldIcon = new L.Icon({
 // Use the d3.json function to read in the data from the url
 d3.json(link).then(function(data) {
   
-  for (const value of Object.values(data)) {       
+  for (const value of Object.values(data)) {         
     
 
     // Create the color code for different work_environment
-    var job_mode = value['work_environment'];
+    var job_mode = value['attribute'];
     if (job_mode == 'onsite') iconColor = redIcon;
     else if (job_mode == 'remote') iconColor = greenIcon;    
     else iconColor = goldIcon; 
@@ -62,14 +62,16 @@ d3.json(link).then(function(data) {
     
     // Bind a popup to the markers with required information
     marker.bindPopup(
-      '<h3> Title:' + value['title'] + '</h3><hr /><hr />Company: ' +
-      value['company'] + '<br /><br />Work Environment: ' +
-      value['work_environment'] + '<br /><br />Location: ' + value['location'] 
+      '<h3> Title: ' + value['title'] + '</h3><hr /><hr />Company: ' +
+      value['company'] + '<br /><br />Attribute: ' +
+      value['attribute'] + '<br /><br />Location: ' + value['location'] 
       + '<br /><br />Posted Date: ' + value['posted_date'] 
       + '<br /><br />Link: ' + value['link']).addTo(myMap);
 
       // 'Name: <a href="' + url + '" target="trail_stop">'
-      // .bindPopup('<a href="Web Page Adress Here"><h1> Test Title </h1></a><img src="Link to Image" width=100 height=100 />');
+      // .bindPopup('<a href="value['link']"><h1> Apply Here</h1></a>')
+      
+      // "<br />'<a href='https://metadatapdxcyclesafety.neocities.org/' target='_blank'>metadata</a>'";
       
 
     }
@@ -78,9 +80,9 @@ d3.json(link).then(function(data) {
 
 // // The function that will determine the color of a popup based on the depth of the work_environment
 // function iconColor() {
-//     if (value['work_environment'] == 'onsite') return 'redIcon';
-//     else if (value['work_environment'] == 'remote') return 'greenIcon';    
-//     else return 'goldIcon';
+//     if (value['work_environment'] == 'onsite') {return 'redIcon';}
+//     else if (value['work_environment'] == 'remote') {return 'greenIcon';}    
+//     else {return 'goldIcon';}
     
 //   }
   
