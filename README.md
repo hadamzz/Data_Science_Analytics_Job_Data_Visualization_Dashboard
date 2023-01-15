@@ -1,4 +1,4 @@
-# Data Science/ Analytics Job Data Visualization Dashboard
+# Data Science/ Analytics - Job Data Visualization Dashboard
 Group 15, Project 3 
 
 Group Members:  
