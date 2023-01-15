@@ -1,6 +1,10 @@
 # Data Science/ Analytics Job Data Visualization Dashboard
 Group 15, Project 3
-Group Members: Heather Adams, Meena Rai, Tesa Childs-Skelton , Timea Jakab     
+Group Members:
+Heather Adams,
+Meena Rai,
+Tesa Childs-Skelton,
+Timea Jakab     
 		    
 # Overview
 Given the present climate and its impact oo the current job market like layoffs, revaluations and worries about the economy, it’s a safe bet to focus on analyzing the most high demand job skills. Some jobs appear to be bearing the brunt of layoffs on the other hand there are many career paths that are considered to be safer bets. According to the U.S. Labor Department, around 40 million technical jobs go unfulfilled due to a lack of skilled talent (add link).  
