@@ -1,4 +1,4 @@
-# DATA Science/ Analytics Job Data Visualization Dashboard
+# Data Science/ Analytics Job Data Visualization Dashboard
 Group 15, Project 3
 Group Members: Heather Adams, Meena Rai, Tesa Childs-Skelton , Timea Jakab     
 		    
