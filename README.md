@@ -12,7 +12,8 @@ Given the present climate and its impact oo the current job market like layoffs,
 Our project focused on creating a Flask Application to analyze DATA Science/ Analytics Jobs data to see which specific roles are in high-demand, average salary distribution per role, job attributes (onsite, remote, hybrid), location and current postings. Hopefully this will help our fellow classmates make an educated decision on picking roles have a high growth opportunity and might be a safer picks during a potential recession.
 
 # Methodology
-For this project two data sets from Kaggle were used:
+For this project two data sets from Kaggle were used:  
+
     * ds_salaries.csv (https://www.kaggle.com/code/hamdy17298/eda-on-data-science-jobs-salaries/data) - describe (year, demografics, rows). 
     
     * linkedin-jobs-africa.csv (https://www.kaggle.com/datasets/cedricaubin/linkedin-data-analyst-jobs-listings) - describe (year, demografics, rows). 
