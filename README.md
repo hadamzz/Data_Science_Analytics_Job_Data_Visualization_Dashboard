@@ -9,8 +9,8 @@ Group Members:
  
 		    
 # Overview
-Given the present climate and its impact oo the current job market like layoffs, revaluations and worries about the economy, it’s a safe bet to focus on analyzing the most high demand job skills. Some jobs appear to be bearing the brunt of layoffs on the other hand there are many career paths that are considered to be safer bets. According to the U.S. Labor Department, around 40 million technical jobs go unfulfilled due to a lack of skilled talent [([)](https://codesubmit.io/blog/shortage-of-developers/#:~:text=Around%2040%20million%20technical%20jobs,1.2%20million%20engineering%20job%20openings.).  
-](url)
+Given the present climate and its impact oo the current job market like layoffs, revaluations and worries about the economy, it’s a safe bet to focus on analyzing the most high demand job skills. Some jobs appear to be bearing the brunt of layoffs on the other hand there are many career paths that are considered to be safer bets. According to the U.S. Labor Department, around 40 million technical jobs go unfulfilled due to a lack of skilled talent.
+
 Our project focused on creating a Flask Application to analyze DATA Science/ Analytics Jobs data to see which specific roles are in high-demand, average salary distribution per role, job attributes (onsite, remote, hybrid), location and current postings. Hopefully this will help our fellow classmates make an educated decision on picking roles have a high growth opportunity and might be a safer picks during a potential recession.
 
 # Methodology
