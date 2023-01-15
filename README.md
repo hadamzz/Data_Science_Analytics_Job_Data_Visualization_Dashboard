@@ -3,11 +3,8 @@ Group 15, Project 3
 Group Members:  
 
  Heather Adams,  
- 
  Meena Rai,  
- 
  Tesa Childs-Skelton,  
- 
  Timea Jakab. 
  
 		    
