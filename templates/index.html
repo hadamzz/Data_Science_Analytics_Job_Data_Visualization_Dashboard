@@ -21,6 +21,11 @@
 
   <!-- Navbar component added -->
   {% include "navbar.html" %}
+
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h1 class="display-4">Data Job Diggers</h1>
+  </div>
   
     
     <!-- Start of 'Purpose' container -->
@@ -32,63 +37,52 @@
           <div id="wordChart"></div> 
           
           <p>
-            The purpose of this project was to analyze how weather changes as we get closer to the equator. to accomplish this analysis, we first pulled data from the openWeatherMap API to assemble a data set on over 500 cities.
-          </p>
-          
-          
+            Given the present climate and its impact oo the current job market like layoffs, revaluations and worries about the economy, it’s a safe bet to focus on analyzing the most high demand job skills. Some jobs appear to be bearing the brunt of layoffs on the other hand there are many career paths that are considered to be safer bets. According to the [U.S. Labor Department](https://www.bls.gov/ooh/math/data-scientists.htm) around 40 million technical jobs go unfulfilled due to a lack of skilled talent.
+<p>
+  <p>
+            Our project focused on creating a Flask Application to analyze DATA Science/ Analytics Jobs data to see which specific roles are in high-demand, average salary distribution per role, job attributes (onsite, remote, hybrid), location and current postings. Hopefully this will help our fellow classmates make an educated decision on picking roles have a high growth opportunity and might be a safer picks during a potential recession.
+                      </p>
         </div>
       </div>
-        <!-- End of 'Summary' container -->
+        <!-- End of 'Purpose' container -->
 
-      <!-- Start of 'Visualization' container -->
-      <div class="row"></div>
-      <!-- <div class="col-lg-5 col-md-12"> -->
-        <div class="box bg-white ms-2 my-4 p-4">
-          <h2 class="title text-left">Visualization</h2>
-          <hr>
-          <!-- Create 'first row' to hold two plots -->
-          <div class="row">
-            <div class="col-6">
-              <div class="title text-center">Salary Distribution</div>
-              <a href="visualizations/salary.html">
-                <img class="rounded img-fluid" src="static/images/salary_ss.png" alt="salary Plot">
-              </a>
-            </div>
-            <div class="col-6">
-              <div class="title text-center">Attribute Distribution</div>
-              <a href="visualizations/type.html">
-                <img class="rounded img-fluid" src="static/images/attribute_ss.png" alt="attribute Plot">
-              </a>
-            </div>
-          </div>
-          <!-- Create 'second row' to hold remaining two plots -->
-          <div class="row">
-            <div class="col-6">
-              <div class="title text-center">Job Demographics</div>
-              <a href="visualizations/country.html">
-                <img class="rounded img-fluid" src="static/images/country_ss.png" alt="country Plot">
-              </a>
-            </div>
-            <div class="col-6">
-              <div class="title text-center">Job Postings</div>
-              <a href="visualizations/map.html">
-                <img class="rounded img-fluid" src="static/images/map_ss.png" alt="map Plot">
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End of 'Visualization' container -->
-
-      <!-- Start of 'Resources container' -->
-      <div>
-        <div class="row"> 
+    <!-- Start of 'Resources' container -->
+    <div class="container bg-grey">
+      <div class="row">        
+        <div class="box bg-white my-4 p-4">
           <h2 class="title text-left">Resources</h2>
           <hr>
-            <p></p>
-        </div>       
+          <div id="wordChart"></div> 
+          
+          <p>
+            <ul>
+            <li>https://www.kaggle.com/code/hamdy17298/eda-on-data-science-jobs-salaries/data</li>
+            <li>https://www.kaggle.com/datasets/cedricaubin/linkedin-data-analyst-jobs-listings </li>
+            <li>OpenWeatherMap.org. (2012). Retrieved from https://openweathermap.org/  </li>       
+            </ul>
+          </p>
+        </div>
       </div>
-      <!-- End of 'Resources container' -->    
+        <!-- End of 'Resources' container -->
+
+    <!-- Start of 'Team' container -->
+    <div class="container bg-grey">
+      <div class="row">        
+        <div class="box bg-white my-4 p-4">
+          <h2 class="title text-left">Team</h2>
+          <hr>
+          <div id="wordChart"></div> 
+
+          <p> Group 15, Project 3 </p>
+          <ul> 
+             <li>Heather Adams</li>  
+             <li>Meena Rai</li>  
+             <li>Tesa Childs-Skelton</li>
+             <li>Timea Jakab</li>
+          </ul>
+        </div>
+      </div>
+        <!-- End of 'Team' container -->  
     </div>      
         
   </body>

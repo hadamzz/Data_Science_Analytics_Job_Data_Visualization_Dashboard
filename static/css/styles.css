@@ -1,9 +1,18 @@
-body {background-color: #f2f0f0;
-    border: 5px solid black;}
+body {
+  background-color: black;
+  border: 5px solid rgb(51, 34, 34);
+}
 
-.navbar-brand {color: white; font:bold; background: rgb(13, 172, 156);}
+.navbar-brand {
+  color: powderblue;
+  font: bold;
+  background: black;
+}
 
-.title {color: rgb(13, 172, 156); font-weight: bold;}
+.title {
+  color: powderblue(211, 233, 231);
+  font-weight: bold;
+}
 
 #map,
 body,
@@ -11,15 +20,25 @@ html {
   height: 100%;
 }
 
+.jumbotron {
+  background-image: url("../images/DV-stock.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: black;
+  font: bolder;
+}
+
 .legend {
   line-height: 18px;
-  color: black;
-  background-color: white;
+  color: powderblue;
+  background-color: black;
 }
+
 .legend i {
   width: 18px;
   height: 18px;
   float: left;
   margin-right: 8px;
   opacity: 0.7;
-} 
+}
