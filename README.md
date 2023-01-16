@@ -23,6 +23,9 @@ For this project two data sets from Kaggle were used:
 * Front end tools - JS, CSS, HTML
 
 ## Flask Application Structure (insert flow chart)
+    
+    [Flask Application Structure (2).pdf](https://github.com/hadamzz/group-15-project-3/files/10421606/Flask.Application.Structure.2.pdf)    
+    
     * Data
     * jobs.ipynb
     * app.py
