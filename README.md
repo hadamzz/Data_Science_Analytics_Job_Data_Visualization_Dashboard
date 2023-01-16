@@ -17,7 +17,6 @@ Our project focused on creating a Flask Application to analyze DATA Science/ Ana
 For this project two data sets from Kaggle were used:  
 
 1.[ds_salaries.csv](https://www.kaggle.com/code/hamdy17298/eda-on-data-science-jobs-salaries/data) 
-
 2.[linkedin-jobs-usa.csv](https://www.kaggle.com/datasets/cedricaubin/linkedin-data-analyst-jobs-listings)
     
 * Back end tools - Python, Sqlite Database
