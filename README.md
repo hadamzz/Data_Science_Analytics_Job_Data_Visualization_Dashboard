@@ -106,9 +106,12 @@ Landing page  has the following components:
 
 ### Salary Data Visualization
 Salary Data Visualization has the following components:
-    * A navigation bar
-    * A bar chart displaying average salary distribution per job title
+    * A navigation bar 
+    
+    * A bar chart displaying average salary distribution per job title 
+    
     * CHART SUMMARY 
+    
 ![Salary Chart](static/images/salary.png)
 
 ### Attribute Data Visualization
