@@ -92,11 +92,16 @@ A dashboard with five visualizations was created:
 
 ### Dashboard Landing Page
 Landing page  has the following components:
-    * A navigation bar
-    * A word cloud chart displaying common data job titles as per MARKET DEMAND
+    * A navigation bar 
+    
+    * A word cloud chart displaying common data job titles as per MARKET DEMAND 
+    
     * An explaination of the project purpose  
-    * Bottom navigation bar images link to their visualization page
-    * RESOURCES
+    
+    * Bottom navigation bar images link to their visualization page 
+     
+    * RESOURCES 
+    
     * TEAM MEMBERS
 
 ### Salary Data Visualization
