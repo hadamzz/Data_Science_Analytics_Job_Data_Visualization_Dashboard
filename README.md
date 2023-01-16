@@ -47,11 +47,10 @@ For this project two data sets from Kaggle were used:
     * Converted lattitude and longitude to float types 
 
 ## Loaded Wrangeled data in sqlite Database
-Loaded the cleaned dataframes into sqlite databse:  
+Loaded the cleaned dataframes into sqlite databse: 
+[Job Statistics Database](data/jobstats_db.sqlite 
 
-    * [Job Statistics Database](data/jobstats_db.sqlite) 
-    
-    * [US Job Posting Database](data/updated_jobs_usa_db.sqlite)
+[US Job Posting Database](data/updated_jobs_usa_db.sqlite)
 
 ## Created Backend for the app
 * Following API routes were created for the "js" files by connecting and quering the database:
