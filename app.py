@@ -46,9 +46,11 @@ def word_data():
 def salary_data():
     conn = sqlite3.connect('data/jobstats_db.sqlite')
     cur = conn.cursor()
-    average_salary = cur.execute('select job_title, AVG(salary_in_usd) from job_stats GROUP BY job_title').fetchall()
+    average_salary = cur.execute('select job_title, AVG(salary_in_usd) from job_stats GROUP BY job_title ').fetchall()
     conn.close()
     # print(average_salary)
+
+    # average_salary = cur.execute('select job_title, AVG(salary_in_usd), COUNT(job_title) as frequency_count from job_stats GROUP BY job_title, ORDER BY frequency_count desc').fetchall()
 
     # Convert the query results to a dictionary using `job_title` as the key and `salary_in_usd` as the value
     salary_dict = {}
