@@ -50,6 +50,7 @@ For this project two data sets from Kaggle were used:
 Loaded the cleaned dataframes into sqlite databse:  
 
 [Job Statistics Database](data/jobstats_db.sqlite) 
+
 [US Job Posting Database](data/updated_jobs_usa_db.sqlite)
 
 ## Created Backend for the app
