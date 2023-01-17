@@ -28,7 +28,6 @@ function plotChart() {
     var type = Object.keys(data);
     
     // Horizontal Bar Chart 
-    // 'text' is used to add hovertext
     var trace1 = {
       values: job_count,
       labels: type,    
@@ -48,7 +47,7 @@ function plotChart() {
         width: 900 
     };  
            
-    // Plot the bar chart (@ div with id='pie' in attribute.html)
+    // Plot the pie chart (@ div with id='pie' in type.html)
     Plotly.newPlot('pie', data, layout);  
 
   }));    

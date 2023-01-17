@@ -4,9 +4,14 @@ body {
 }
 
 .navbar-brand {
-  color: powderblue;
   font: bold;
+  font-size: 25px;
   background: black;
+}
+
+.navbar-nav {
+  font: bold;
+  font-size: 20px;  
 }
 
 .title {
