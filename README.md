@@ -91,9 +91,8 @@ IMAGE OF WORD CHART
 
 ### Salary Data Visualization
 Salary Data Visualization has the following components: 
-
-    * A navigation bar     
-    * A bar chart displaying average salary distribution per job title     
+* A navigation bar 
+* A bar chart displaying average salary distribution per job title     
        
 ![Salary Chart](static/images/salary.png)
 
