@@ -71,17 +71,12 @@ def country_data():
     conn.close()
  
     #Convert the query results to a dictionary using `company_location` as the key and `job_title` as the value
-    num_jobs_list = []
-
-    for country, job_count in num_jobs:
-         num_jobs_dict = {}
-         num_jobs_dict["Name"] = country
-         num_jobs_dict["Count"] = job_count
-         num_jobs_list.append(num_jobs_dict)
-
+    country_jobs_dict = {}
+    for country, count in num_jobs:
+        country_jobs_dict[country] =  count 
 
     # Return the JSON representation of the dictionary
-    return jsonify(num_jobs_list)
+    return jsonify(country_jobs_dict)
   
 
 # Create and define map data route
