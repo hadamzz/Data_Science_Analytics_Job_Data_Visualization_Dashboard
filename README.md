@@ -108,7 +108,6 @@ Attribute Data Visualization has the following components:
 ### Country Data Visualization
 Country data Visualization has the following components:
 * A navigation bar 
-
 * A bubble chart displaying proportion of job postings per country
    
 IMAGE OF Bubble CHART
