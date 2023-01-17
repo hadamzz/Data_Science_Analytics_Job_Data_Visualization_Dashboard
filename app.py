@@ -1,28 +1,6 @@
 # Import dependencies
-import numpy as np
-import pandas as pd
-import datetime as dt
-
 import sqlite3
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-from sqlalchemy import Column, Integer, String, Float
-from sqlalchemy.types import Date
-from sqlalchemy.ext.declarative import declarative_base
-
 from flask import Flask, jsonify, render_template 
-from flask import request
-
-
-#################################################
-
-# # Connect to the Database and check the table
-# conn = sqlite3.connect('data/jobstats_db.sqlite')
-# cur = conn.cursor()
-# conn.close()
-# print(cur.execute('select * from job_stats').fetchall())
 
 #################################################
 
@@ -57,7 +35,7 @@ def salary_data():
     conn.close()
     # print(average_salary)
 
-    # Convert the query results to a dictionary using `job_title` as the key and `salary_in_usd` as the value
+    # Convert the query results to a dictionary using `job_title` as the key and `average salary_in_usd` as the value
     salary_dict = {}
     for title, count, salary in average_salary:
         salary_dict[title] = salary      
@@ -102,27 +80,37 @@ def country_data():
          num_jobs_list.append(num_jobs_dict)
 
 
-    children = {}
-    children = num_jobs_list
-
     # Return the JSON representation of the dictionary
     return jsonify(num_jobs_list)
   
 
-    # conn = sqlite3.connect('data/jobstats_db.sqlite')
-    # cur = conn.cursor()
-    # average_salary = cur.execute('select job_title, count(*) from job_stats GROUP BY job_title').fetchall()
-    # conn.close()
-    # # print(average_salary)
+# Create and define map data route
+@app.route("/api/map_data")
+def map_data():
+    conn = sqlite3.connect('data/updated_jobs_usa_db.sqlite')
+    cur = conn.cursor()
+    job_postings = cur.execute('select * from updated_jobs_usa').fetchall()
+    conn.close()
 
-    # # Convert the query results to a dictionary using `job_title` as the key and `salary_in_usd` as the value
-    # title_dict = {}
-    # for title, count in average_salary:
-    #     title_dict[title] = count       
+    # Convert the query results to a dictionary of dictionaries
+    job_postings_dict = {}
+    i = 0
+    for title, company, attribute, location, posted_date, link, latitude, longitude in job_postings:
+        job_postings_dict[str(i)] = {
+            'latitude': latitude,
+            'longitude': longitude,
+            'company': company,
+            'title': title,
+            'attribute': attribute,
+            'location': location,
+            'posted_date': posted_date,
+            'link': link
+        }
+        i += 1
 
-    # Return the JSON representation of your dictionary. 
-    #return jsonify(title_dict)
-
+    # Return the JSON representation of the dictionary of dictionaries
+    return jsonify(job_postings_dict)
+    
 
 ### SETUP WEB ROUTES
 # Route to render index.html template

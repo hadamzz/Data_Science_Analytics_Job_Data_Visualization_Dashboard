@@ -43,7 +43,7 @@ function plotChart() {
 
     var data = [trace1]
     var layout = {
-      title: {text: 'Average Salary of 10 Most Popular Job Titles', font: {family: 'Arial Black', size: 24}, 
+      title: {text: 'Average Salary (USD) of 10 Most Popular Job Titles', font: {family: 'Arial Black', size: 24}, 
       xaxis: { title: {text: 'Average Salary', font: {family: 'Arial Black', size: 14}}}},
       yaxis: { title: {text: 'Title', font: {family: 'Arial Black', size: 8}}, automargin: true},
       height: 700,
