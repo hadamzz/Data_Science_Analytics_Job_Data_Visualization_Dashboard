@@ -93,21 +93,21 @@ IMAGE OF WORD CHART
 Salary Data Visualization has the following components:
     * A navigation bar     
     * A bar chart displaying average salary distribution per job title     
-    * Chart Summary     
+       
 ![Salary Chart](static/images/salary.png)
 
 ### Attribute Data Visualization
 Attribute Data Visualization has the following components:
     * A navigation bar
     * A pie chart displaying ratio of onsite/ remote/ hybrid jobs
-    * Chart Summary 
+    
 ![Attribute Chart](static/images/attribute.png)
 
 ### Country Data Visualization
 Country data Visualization has the following components:
     * A navigation bar
     * A bubble chart displaying proportion of job postings per country
-    * Chart Summary
+   
 IMAGE OF Bubble CHART
 
 ### Job Posting Data Visualization
