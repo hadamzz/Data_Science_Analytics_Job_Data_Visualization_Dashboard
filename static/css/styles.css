@@ -23,6 +23,11 @@ ul {
   background: black;
 }
 
+.navbar-nav {
+  font: bold;
+  font-size: 20px;  
+}
+
 .title {
   color: powderblue(211, 233, 231);
   font-weight: bold;

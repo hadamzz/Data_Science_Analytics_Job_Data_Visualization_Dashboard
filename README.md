@@ -16,25 +16,15 @@ Our project focused on creating a Flask Application to analyze DATA Science/ Ana
 # Methodology
 For this project two data sets from Kaggle were used:  
 
-1.[ds_salaries.csv](https://www.kaggle.com/code/hamdy17298/eda-on-data-science-jobs-salaries/data) 
+1.[ds_salaries.csv](https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries) 
 2.[linkedin-jobs-usa.csv](https://www.kaggle.com/datasets/cedricaubin/linkedin-data-analyst-jobs-listings)
     
 * Back end tools - Python, Sqlite Database
 * Front end tools - JS, CSS, HTML
 
-## Flask Application Structure (insert flow chart)
+## Flask Application Structure (Wire Frame)
     
-    [Flask Application Structure (2).pdf](https://github.com/hadamzz/group-15-project-3/files/10421606/Flask.Application.Structure.2.pdf)    
-    
-    * Data
-    * jobs.ipynb
-    * app.py
-    * static
-        *js
-        *css
-        *images
-    * templates
-        *html
+  ![Wire Frame](static/images/Flask%20Structure.jpeg)  
     
 ## Extracted and Wrangled Data
 * Data (csv files) was extracted from the above mentioned sources and loaded  into Pandas dataframes using Python.
@@ -44,7 +34,6 @@ For this project two data sets from Kaggle were used:
     * Renamed colums/ cells of a column for user freindly visualization
     * Droped undesired columns
     * Used googlemaps API to add coordinates (lattitude and longitude) of the job locations for job posting visualization
-    * Converted lattitude and longitude to float types 
 
 ## Loaded Wrangeled data in sqlite Database
 Loaded the cleaned dataframes into sqlite databse:  
@@ -83,8 +72,6 @@ Loaded the cleaned dataframes into sqlite databse:
 * [CSS files](static/css)
 
 * Web pages with navbar were created using HTML. Visualization contains following user-driven interactions:
-    * Button
-    * Dropdown
     * Onclick
     * Hover over
     * Link
@@ -95,41 +82,36 @@ A dashboard with five visualizations was created:
 
 ### Dashboard Landing Page
 Landing page  has the following components:
-    * A navigation bar 
-    
-    * A word cloud chart displaying common data job titles as per MARKET DEMAND 
-    
-    * An explaination of the project purpose  
-    
-    * Bottom navigation bar images link to their visualization page 
-     
-    * RESOURCES 
-    
-    * TEAM MEMBERS
+* A navigation bar 
+* A word cloud chart displaying common data job titles as per MARKET DEMAND 
+* An explaination of the project purpose 
+* Resources 
+* Team Members 
+
+IMAGE OF WORD CHART
 
 ### Salary Data Visualization
-Salary Data Visualization has the following components:
-    * A navigation bar 
-    
-    * A bar chart displaying average salary distribution per job title 
-    
-    * CHART SUMMARY 
-    
+Salary Data Visualization has the following components: 
+* A navigation bar 
+* A bar chart displaying average salary distribution per job title     
+       
 ![Salary Chart](static/images/salary.png)
 
 ### Attribute Data Visualization
-Attribute Data Visualization has the following components:
-    * A navigation bar
-    * A pie chart displaying ratio of onsite/ remote/ hybrid jobs
-    * CHART SUMMARY 
+Attribute Data Visualization has the following components:  
+
+* A navigation bar  
+* A pie chart displaying ratio of onsite/ remote/ hybrid jobs 
+    
+    
 ![Attribute Chart](static/images/attribute.png)
 
 ### Country Data Visualization
 Country data Visualization has the following components:
-    * A navigation bar
-    * A tree map displaying proportion of job postings per country
-    * CHART SUMMARY
-
+* A navigation bar 
+* A bubble chart displaying proportion of job postings per country
+   
+IMAGE OF Bubble CHART
 
 ### Job Posting Data Visualization
 * Job posting data Visualization has the following components:

@@ -43,11 +43,11 @@ function plotChart() {
 
     var data = [trace1]
     var layout = {
-      title: {text: 'Average Salary Distribution by Title', font: {family: 'Arial Black', size: 24}},
-      xaxis: { title: {text: 'Average Salary', font: {family: 'Arial Black', size: 14}}},
-      // yaxis: { title: {text: 'Title', font: {family: 'Arial Black', size: 14}}},
-      height: 600,
-      width: 900 
+      title: {text: 'Average Salary of 10 Most Popular Job Titles', font: {family: 'Arial Black', size: 24}, 
+      xaxis: { title: {text: 'Average Salary', font: {family: 'Arial Black', size: 14}}}},
+      yaxis: { title: {text: 'Title', font: {family: 'Arial Black', size: 8}}, automargin: true},
+      height: 700,
+      width: 1500 
     };  
            
     // Plot the bar chart (@ div with id='bar' in salary.html)
