@@ -42,9 +42,9 @@ function plotChart() {
 
     var data = [trace1]
     var layout = {
-        title: {text: 'Attribute Distribution by Title', font: {family: 'Arial Black', size: 24}},    
-        height: 600,
-        width: 900 
+        title: {text: 'Attribute Distribution (Remote/Onsite/ Hybrid)', font: {family: 'Arial Black', size: 24}},    
+        height: 700,
+        width: 1500 
     };  
            
     // Plot the pie chart (@ div with id='pie' in type.html)
