@@ -1,21 +1,28 @@
 # Import dependencies
+import numpy as np
+import pandas as pd
+import datetime as dt
+
 import sqlite3
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, func
+from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy.types import Date
+from sqlalchemy.ext.declarative import declarative_base
+
 from flask import Flask, jsonify, render_template 
+from flask import request
+
 
 #################################################
 
-# # Connect to the 'jobstats_db' Database and check the table
+# # Connect to the Database and check the table
 # conn = sqlite3.connect('data/jobstats_db.sqlite')
 # cur = conn.cursor()
 # conn.close()
 # print(cur.execute('select * from job_stats').fetchall())
-
-
-# # Connect to the 'updated_jobs_usa_db' Database and check the table
-# conn = sqlite3.connect('data/updated_jobs_usa_db.sqlite')
-# cur = conn.cursor()
-# # conn.close()
-# print(cur.execute('select * from updated_jobs_usa').fetchall())
 
 #################################################
 
@@ -31,11 +38,11 @@ def word_data():
     # Connect to the databse and fetch the data from 'job_title' column
     conn = sqlite3.connect('data/jobstats_db.sqlite')
     cur = conn.cursor()
-    word_data = cur.execute('select job_title from job_stats').fetchall()
+    word_data = cur.execute('select job_title,count(*) from job_stats group by job_title').fetchall()
     conn.close()
 
     # Convert list of tuples into normal list
-    word_data = list(np.ravel(word_data))
+    #word_data = list(np.ravel(word_data))
 
     # Return a JSON list of word_data
     return jsonify(word_data)
@@ -46,15 +53,13 @@ def word_data():
 def salary_data():
     conn = sqlite3.connect('data/jobstats_db.sqlite')
     cur = conn.cursor()
-    average_salary = cur.execute('select job_title, AVG(salary_in_usd) from job_stats GROUP BY job_title ').fetchall()
+    average_salary = cur.execute('select job_title as title , count(job_title) as count, ROUND(AVG(salary_in_usd),0) as salary from job_stats GROUP BY job_title order by count(job_title) desc limit 10').fetchall()
     conn.close()
     # print(average_salary)
 
-    # average_salary = cur.execute('select job_title, AVG(salary_in_usd), COUNT(job_title) as frequency_count from job_stats GROUP BY job_title, ORDER BY frequency_count desc').fetchall()
-
     # Convert the query results to a dictionary using `job_title` as the key and `salary_in_usd` as the value
     salary_dict = {}
-    for title, salary in average_salary:
+    for title, count, salary in average_salary:
         salary_dict[title] = salary      
 
     # Return the JSON representation of your dictionary. 
@@ -83,45 +88,40 @@ def type_data():
 def country_data():
     conn = sqlite3.connect('data/jobstats_db.sqlite')
     cur = conn.cursor()
-    num_jobs = cur.execute('select company_location, COUNT(job_title) from job_stats GROUP BY company_location').fetchall()
+    num_jobs = cur.execute('select company_location, count(*) from job_stats GROUP BY company_location').fetchall()
+    #word_data = cur.execute('select job_title,count(*) from job_stats group by job_title').fetchall()
     conn.close()
  
-    # Convert the query results to a dictionary using `company_location` as the key and `job_title` as the value
-    num_jobs_dict = {}
+    #Convert the query results to a dictionary using `company_location` as the key and `job_title` as the value
+    num_jobs_list = []
+
     for country, job_count in num_jobs:
-        num_jobs_dict[country] = job_count    
+         num_jobs_dict = {}
+         num_jobs_dict["Name"] = country
+         num_jobs_dict["Count"] = job_count
+         num_jobs_list.append(num_jobs_dict)
+
+
+    children = {}
+    children = num_jobs_list
 
     # Return the JSON representation of the dictionary
-    return jsonify(num_jobs_dict)
+    return jsonify(num_jobs_list)
+  
 
+    # conn = sqlite3.connect('data/jobstats_db.sqlite')
+    # cur = conn.cursor()
+    # average_salary = cur.execute('select job_title, count(*) from job_stats GROUP BY job_title').fetchall()
+    # conn.close()
+    # # print(average_salary)
 
-# Create and define map data route
-@app.route("/api/map_data")
-def map_data():
-    conn = sqlite3.connect('data/updated_jobs_usa_db.sqlite')
-    cur = conn.cursor()
-    job_postings = cur.execute('select * from updated_jobs_usa').fetchall()
-    conn.close()
+    # # Convert the query results to a dictionary using `job_title` as the key and `salary_in_usd` as the value
+    # title_dict = {}
+    # for title, count in average_salary:
+    #     title_dict[title] = count       
 
-    # Convert the query results to a dictionary of dictionaries
-    job_postings_dict = {}
-    i = 0
-    for title, company, attribute, location, posted_date, link, latitude, longitude in job_postings:
-        job_postings_dict[str(i)] = {
-            'latitude': latitude,
-            'longitude': longitude,
-            'company': company,
-            'title': title,
-            'attribute': attribute,
-            'location': location,
-            'posted_date': posted_date,
-            'link': link
-        }
-        i += 1
-
-    # Return the JSON representation of the dictionary of dictionaries
-    return jsonify(job_postings_dict)
-    
+    # Return the JSON representation of your dictionary. 
+    #return jsonify(title_dict)
 
 
 ### SETUP WEB ROUTES
@@ -156,6 +156,12 @@ def map():
 
     # Return template and data
     return render_template("map.html")
+
+@app.route("/word")
+def word():
+
+    # Return template and data
+    return render_template("word.html")
 
 
 # Define main behavior
