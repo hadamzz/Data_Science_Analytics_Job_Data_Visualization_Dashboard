@@ -90,7 +90,8 @@ Landing page  has the following components:
 IMAGE OF WORD CHART
 
 ### Salary Data Visualization
-Salary Data Visualization has the following components:
+Salary Data Visualization has the following components: 
+
     * A navigation bar     
     * A bar chart displaying average salary distribution per job title     
        
