@@ -98,8 +98,7 @@ Salary Data Visualization has the following components:
 
 ### Attribute Data Visualization
 Attribute Data Visualization has the following components:
-    * A navigation bar 
-    
+    * A navigation bar   
     * A pie chart displaying ratio of onsite/ remote/ hybrid jobs 
     
     
