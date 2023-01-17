@@ -35,7 +35,7 @@ anychart.onDocumentReady(function () {
           .colorLineSize(15);
   
         // set container id for the chart
-        chart.container('container');
+        chart.container('wordChart');
         // initiate chart drawing
         chart.draw();
   
