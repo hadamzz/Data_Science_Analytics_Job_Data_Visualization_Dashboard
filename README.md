@@ -87,8 +87,7 @@ Landing page  has the following components:
 * An explaination of the project purpose 
 * Resources 
 * Team Members 
-
-IMAGE OF WORD CHART
+![Word Chart](static/images/word.png)
 
 ### Salary Data Visualization
 Salary Data Visualization has the following components: 

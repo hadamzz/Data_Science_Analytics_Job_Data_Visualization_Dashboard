@@ -23,12 +23,12 @@ ul {
   background: black;
 }
 
-/* #wordChart {
-  width: 100%;
+.div-1,
+  #wordChart{width: 83%;
   height: 100%;
-  margin: 0;
-  padding: 0;
-} */
+  margin: auto;
+  padding: 0;}
+
 
 .title {
   color: powderblue(211, 233, 231);
