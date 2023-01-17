@@ -24,17 +24,7 @@ For this project two data sets from Kaggle were used:
 
 ## Flask Application Structure (Wire Frame)
     
-    [Flask Application Structure (2).pdf](https://github.com/hadamzz/group-15-project-3/files/10421606/Flask.Application.Structure.2.pdf)    
-    
-    * Data
-    * jobs.ipynb
-    * app.py
-    * static
-        *js
-        *css
-        *images
-    * templates
-        *html
+  ![Wire Frame](static/images/Flask%20Structure.jpeg)  
     
 ## Extracted and Wrangled Data
 * Data (csv files) was extracted from the above mentioned sources and loaded  into Pandas dataframes using Python.
