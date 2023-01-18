@@ -16,8 +16,8 @@ Our project focused on creating a Flask Application to analyze DATA Science/ Ana
 # Methodology
 For this project two data sets from Kaggle were used:  
 
-1.[ds_salaries.csv](https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries) -  has 12 columns and 605 rows with data containing job titles, salary, location (countries) as well as type of roles (remote, onsite, hybrid) for fiscal years 2020, 2021 and 2022
-2.[linkedin-jobs-usa.csv](https://www.kaggle.com/datasets/cedricaubin/linkedin-data-analyst-jobs-listings) - has 11 columns and 2845 rows with data containing Job title, Company, Attribute (onsite/ remote/ hybrid), Location, Posted Date, Hyperlink for the posting for last quater of 2022
+* [ds_salaries.csv](https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries) -  has 12 columns and 605 rows with data containing job titles, salary, location (countries) as well as type of roles (remote, onsite, hybrid) for fiscal years 2020, 2021 and 2022
+* [linkedin-jobs-usa.csv](https://www.kaggle.com/datasets/cedricaubin/linkedin-data-analyst-jobs-listings) - has 11 columns and 2845 rows with data containing Job title, Company, Attribute (onsite/ remote/ hybrid), Location, Posted Date, Hyperlink for the posting for last quater of 2022
     
 * Back end tools - Python, Sqlite Database
 * Front end tools - JS, CSS, HTML
