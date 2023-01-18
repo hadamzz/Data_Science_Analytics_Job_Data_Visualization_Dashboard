@@ -16,15 +16,15 @@ Our project focused on creating a Flask Application to analyze DATA Science/ Ana
 # Methodology
 For this project two data sets from Kaggle were used:  
 
-1.[ds_salaries.csv](https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries) 
-2.[linkedin-jobs-usa.csv](https://www.kaggle.com/datasets/cedricaubin/linkedin-data-analyst-jobs-listings)
+1.[ds_salaries.csv](https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries) -  has 12 columns and 605 rows with data containing job titles, salary, location (countries) as well as type of roles (remote, onsite, hybrid) for fiscal years 2020, 2021 and 2022
+2.[linkedin-jobs-usa.csv](https://www.kaggle.com/datasets/cedricaubin/linkedin-data-analyst-jobs-listings) - has 11 columns and 2845 rows with data containing Job title, Company, Attribute (onsite/ remote/ hybrid), Location, Posted Date, Hyperlink for the posting for last quater of 2022
     
 * Back end tools - Python, Sqlite Database
 * Front end tools - JS, CSS, HTML
 
 ## Flask Application Structure (Wire Frame)
     
-  ![Wire Frame](static/images/Flask%20Structure.jpeg)  
+  ![Wire Frame](static/images/Flask%20Structure.png) 
     
 ## Extracted and Wrangled Data
 * Data (csv files) was extracted from the above mentioned sources and loaded  into Pandas dataframes using Python.
@@ -60,10 +60,10 @@ Loaded the cleaned dataframes into sqlite databse:
     
 
 ## Created Frontend for the app
-* Visualization functions were created using following JS libraries:
+* Visualization functions were created using multiple JS libraries e.g.
     * Plotly js 
     * leaflet js
-    * Chart js 
+    * Any Chart (New library)
 * [JS files](static/js)
 
 * Visualization styling was done using following css libraries:
@@ -71,10 +71,10 @@ Loaded the cleaned dataframes into sqlite databse:
     * Bootstrap min css
 * [CSS files](static/css)
 
-* Web pages with navbar were created using HTML. Visualization contains following user-driven interactions:
+* Web pages with navbar were created using HTML. Visualization contains multiple user-driven interactions e.g.
     * Onclick
     * Hover over
-    * Link
+    * Hyperlink
 * [HTML files](templates)
 
 ## Dashboard

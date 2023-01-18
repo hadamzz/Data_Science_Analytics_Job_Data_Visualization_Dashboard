@@ -18,10 +18,7 @@ def word_data():
     cur = conn.cursor()
     word_data = cur.execute('select job_title,count(*) from job_stats group by job_title').fetchall()
     conn.close()
-
-    # Convert list of tuples into normal list
-    #word_data = list(np.ravel(word_data))
-
+       
     # Return a JSON list of word_data
     return jsonify(word_data)
 

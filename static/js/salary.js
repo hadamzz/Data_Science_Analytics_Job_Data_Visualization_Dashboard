@@ -1,4 +1,4 @@
-// // // Read the json file from the url to confirm and understand the data architecture // // //
+// Read the json file from the url to confirm and understand the data architecture // 
 
 // URL for fetching the data
 const link = '/api/salary_data';
@@ -17,7 +17,7 @@ dataProm.then(function(data){
 })
 
 
-// // // // Create function for plotChart (bar and bubble chart) // // //
+// Create function for plotChart (bar and bubble chart) 
 
 function plotChart() {
   // Read in the data from the Link
@@ -28,7 +28,6 @@ function plotChart() {
     var title = Object.keys(data);
     
     // Horizontal Bar Chart 
-    // 'text' is used to add hovertext
     var trace1 = {
       x: salary,
       y: title,    

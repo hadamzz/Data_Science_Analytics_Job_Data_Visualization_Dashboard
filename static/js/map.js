@@ -55,11 +55,9 @@ function chooseColor(work_environment) {
 // Use d3.json function to read in the data from the url
 d3.json(link).then(function(data) {
     
-  for (const value of Object.values(data)) {  
-    // count = count + 1       
+  for (const value of Object.values(data)) {         
     
     // Create the color code for different work_environment
-
     var job_mode = value['attribute'];
     if (job_mode == 'onsite') iconColor = redIcon;
     else if (job_mode == 'remote') iconColor = greenIcon;    
@@ -67,7 +65,6 @@ d3.json(link).then(function(data) {
 
     // Create a layer with the retrieved data and store it as a variable  
     var marker = L.marker([value['latitude'], value['longitude']], {icon: iconColor});
-
         
     // Bind a popup to the markers with required information; convert the job posting link to a hyperlink
     marker.bindPopup(

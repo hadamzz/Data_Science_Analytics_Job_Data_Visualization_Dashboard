@@ -1,4 +1,4 @@
-// // // Read the json file from the url to confirm and understand the data architecture // // //
+// Read the json file from the url to confirm and understand the data architecture 
 
 // URL for fetching the data
 const link = '/api/type_data';
@@ -17,7 +17,7 @@ dataProm.then(function(data){
 })
 
 
-// // // // Create function for plotChart (pie chart) // // //
+// Create function for plotChart (pie chart) 
 
 function plotChart() {
   // Read in the data from the Link
@@ -53,5 +53,5 @@ function plotChart() {
   }));    
 };
 
-// Call the 'plotChart' function //
+// Call the 'plotChart' function 
 plotChart()

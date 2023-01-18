@@ -3,7 +3,6 @@ anychart.onDocumentReady(function () {
   // URL for fetching the data
  const link = '/api/word_data';
 
-
 anychart.data.loadJsonFile(
   //'https://cdn.anychart.com/samples/tag-cloud/population-by-countries/data.json',
   link,
